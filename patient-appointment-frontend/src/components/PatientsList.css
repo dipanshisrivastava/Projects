@@ -1,0 +1,106 @@
+.appointment-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .appointment-modal h2 {
+    margin-bottom: 10px;
+  }
+  
+  .appointment-modal label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .confirm-btn,
+  .cancel-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confirm-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+
+.patients-table {
+    width: 80%; /* Adjust the width as needed */
+    margin: 20px auto; /* Center the table horizontally and add some margin at the top */
+    border-collapse: collapse;
+  }
+  
+  .patients-table th,
+  .patients-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .patients-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .view-details-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .patient-card {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-card h2 {
+    margin-bottom: 15px;
+  }
+  
+  .patient-card p {
+    margin: 5px 0;
+  }
+  
+  .close-details-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .close-details-btn:hover {
+    background-color: #c82333;
+  }
+  
