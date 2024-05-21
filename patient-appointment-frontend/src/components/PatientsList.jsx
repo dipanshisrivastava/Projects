@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './PatientsList.css'; // Make sure the path is correct
+import './PatientsList.css'; 
 
 const PatientsList = () => {
   const [patients, setPatients] = useState([]);
@@ -40,20 +40,30 @@ const PatientsList = () => {
     setShowAppointmentModal(false);
   };
 
-  const handleBookAppointment = () => {
+  const handleBookAppointment = async () => {
     if (selectedPatient) {
-      const updatedPatients = patients.map((patient) => {
-        if (patient.name === selectedPatient.name) {
-          return { ...patient, appointment: selectedDateTime };
-        }
-        return patient;
-      });
+      try {
+        const response = await axios.put(`http://127.0.0.1:8000/patients/${selectedPatient[0]}`, {
+          ...selectedPatient,
+          appointment: selectedDateTime,
+        });
+        const updatedPatient = response.data;
 
-      setPatients(updatedPatients);
-      setSelectedPatient((prev) => ({ ...prev, appointment: selectedDateTime }));
-      handleCloseModal();
+        setPatients((prevPatients) =>
+          prevPatients.map((patient) =>
+            patient.id === updatedPatient.id ? updatedPatient : patient
+          )
+        );
+
+        setSelectedPatient(updatedPatient);
+        handleCloseModal();
+      } catch (err) {
+        console.error('Error booking appointment:', err);
+        setError('Error booking appointment');
+      }
     }
   };
+
   return (
     <div>
       <h1>Patients List</h1>
@@ -66,9 +76,9 @@ const PatientsList = () => {
           </tr>
         </thead>
         <tbody>
-          {patients.map((patient, index) => (
-            <tr key={index}>
-              <td>{patient.name}</td>
+          {patients.map((patient) => (
+            <tr key={patient[0]}>
+              <td>{patient[1]}</td>
               <td>
                 <button className="view-details-btn" onClick={() => handleViewDetails(patient)}>
                   View Details
@@ -81,13 +91,13 @@ const PatientsList = () => {
       {selectedPatient && (
         <div className="patient-card">
           <h2>Patient Details</h2>
-          <p><strong>Name:</strong> {selectedPatient.name}</p>
-          <p><strong>Gender:</strong> {selectedPatient.gender}</p>
-          <p><strong>Age:</strong> {selectedPatient.age}</p>
-          <p><strong>Mobile No:</strong> {selectedPatient.mobileNo}</p>
-          <p><strong>Email:</strong> {selectedPatient.email}</p>
-          {selectedPatient.appointment ? (
-            <p><strong>Appointment:</strong> {selectedPatient.appointment}</p>
+          <p><strong>Name:</strong> {selectedPatient[1]}</p>
+          <p><strong>Gender:</strong> {selectedPatient[2]}</p>
+          <p><strong>Age:</strong> {selectedPatient[3]}</p>
+          <p><strong>Mobile No:</strong> {selectedPatient[4]}</p>
+          <p><strong>Email:</strong> {selectedPatient[5]}</p>
+          {selectedPatient[6] ? (
+            <p><strong>Appointment:</strong> {selectedPatient[6]}</p>
           ) : (
             <p>
               <strong>Appointment:</strong>{' '}

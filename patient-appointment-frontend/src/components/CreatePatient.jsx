@@ -5,7 +5,7 @@ const CreatePatient = () => {
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
-  const [mobileNo, setMobileNo] = useState('');
+  const [mobile_no, setMobile_no] = useState('');
   const [email, setEmail] = useState('');
   const [appointment, setAppointment] = useState('');
   const [error, setError] = useState('');
@@ -13,7 +13,7 @@ const CreatePatient = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !gender || !age || !mobileNo || !email) {
+    if (!name || !gender || !age || !mobile_no || !email) {
       setError('All fields are required');
       return;
     }
@@ -24,7 +24,7 @@ const CreatePatient = () => {
     }
 
     const mobileNoPattern = /^[6-9]\d{9}$/;
-    if (!mobileNoPattern.test(mobileNo)) {
+    if (!mobileNoPattern.test(mobile_no)) {
       setError('Enter a valid mobile number');
       return;
     }
@@ -34,8 +34,9 @@ const CreatePatient = () => {
         name,
         gender,
         age: parseInt(age), // Convert age to integer
-        mobileNo,
+        mobile_no,
         email,
+        appointment,
       });
 
       console.log(response.data);
@@ -49,7 +50,7 @@ const CreatePatient = () => {
   const handleMobileNoChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
-      setMobileNo(value);
+      setMobile_no(value);
     }
   };
 
@@ -92,7 +93,7 @@ const CreatePatient = () => {
         Mobile Number:
         <input
           type="tel"
-          value={mobileNo}
+          value={mobile_no}
           onChange={handleMobileNoChange}
           pattern="[6-9]{1}[0-9]{9}"
           title="Enter a valid mobile number"
