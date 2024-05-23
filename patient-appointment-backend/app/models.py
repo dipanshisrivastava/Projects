@@ -10,3 +10,4 @@ class Patient():
     mobile_no = Column(String)
     email = Column(String, unique=True, index=True)
     appointment = Column(String, nullable=True)
+    message = Column(String, nullable=True)

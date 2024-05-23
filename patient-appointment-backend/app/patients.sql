@@ -13,8 +13,9 @@ CREATE TABLE patients_db (
     gender VARCHAR(50) NOT NULL,
     age INT NOT NULL,
     mobile_no VARCHAR(15) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    appointment DATETIME
+    email VARCHAR(255) PRIMARY KEY,
+    appointment DATETIME,
+    message VARCHAR(500),
 );
 
 -- -- Insert data into the table

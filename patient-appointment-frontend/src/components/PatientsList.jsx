@@ -38,6 +38,7 @@ const PatientsList = () => {
 
   const handleCloseModal = () => {
     setShowAppointmentModal(false);
+    <PatientsList/>
   };
 
   const handleBookAppointment = async () => {
@@ -47,6 +48,7 @@ const PatientsList = () => {
           ...selectedPatient,
           appointment: selectedDateTime,
         });
+        // handleCloseModal();
         const updatedPatient = response.data;
 
         setPatients((prevPatients) =>
@@ -56,7 +58,7 @@ const PatientsList = () => {
         );
 
         setSelectedPatient(updatedPatient);
-        handleCloseModal();
+        handleCloseModal(); 
       } catch (err) {
         console.error('Error booking appointment:', err);
         setError('Error booking appointment');
@@ -104,6 +106,11 @@ const PatientsList = () => {
               <button className="view-details-btn" onClick={handleAppointment}>Create Appointment</button>
             </p>
           )}
+          {selectedPatient[7] ? (
+            <p><strong>Message:</strong> {selectedPatient[7]}</p>
+          ) : (
+            <p><strong>Message:</strong> No message</p>
+          )}
           <button className="close-details-btn" onClick={() => setSelectedPatient(null)}>
             Close Details
           </button>
@@ -117,7 +124,17 @@ const PatientsList = () => {
             type="datetime-local"
             value={selectedDateTime}
             onChange={(e) => setSelectedDateTime(e.target.value)}
+            style={{ margin: '20px' }}
           />
+          <input
+            type="text"
+            placeholder="Enter payment details..."
+            className="payment-details-input"
+            style={{ width: '80%', height: '100px',  margin: '20px'}}
+            
+          />
+          <br/>
+          <button className="payment-btn" onClick={null}>Payment</button>
           <div className="modal-buttons">
             <button className="confirm-btn" onClick={handleBookAppointment}>Confirm</button>
             <button className="cancel-btn" onClick={handleCloseModal}>Cancel</button>
