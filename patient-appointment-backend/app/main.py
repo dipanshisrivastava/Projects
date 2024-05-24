@@ -36,23 +36,11 @@ def read_patients():
     print("in main, in get, fetched patients details from database ", patients)
     return patients
 
-
-# @app.get("/patients/{patient_id}", response_model=schemas.Patient)
-# def read_patient(patient_id: int, db: Session = Depends(get_db)):
-#     db_patient = crud.get_patient(db, patient_id=patient_id)
-#     if db_patient is None:
-#         raise HTTPException(status_code=404, detail="Patient not found")
-#     return db_patient
-
 @app.put("/patients/{patient_id}", response_model=schemas.Patient)
 def update_patient(patient: dict):
     print("in main, in update, patient", patient)
     crud.add_appointment(patient)
     return {"msg": "Successfully updated!"}
-
-# @app.delete("/patients/{patient_id}", response_model=schemas.Patient)
-# def delete_patient(patient_id: int, db: Session = Depends(get_db)):
-#     return crud.delete_patient(db=db, patient_id=patient_id)
 
 if __name__ == "__main__":
     import uvicorn

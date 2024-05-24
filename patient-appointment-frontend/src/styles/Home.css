@@ -1,0 +1,52 @@
+/* CreatePatient.css */
+.homepage {
+    /* background-image: url('/patient-appointment-frontend/public/images/homepage.jpg'); */
+    background-color: blue;
+    background-size: cover;          /* Ensure the image covers the entire area */
+    background-position: center;     /* Center the image */
+    height: 100vh;                   /* Set the height to 100% of the viewport height */
+    width: 100%;                     /* Set the width to 100% of the viewport width */
+    display: flex;                   /* Optional: Flexbox can help center the form */
+    justify-content: center;         /* Center horizontally */
+    align-items: center;             /* Center vertically */
+  }
+  /* .form-container {
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .form-container input,
+  .form-container select,
+  .form-container button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .form-container button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 12px;
+  }
+   */
+
+   

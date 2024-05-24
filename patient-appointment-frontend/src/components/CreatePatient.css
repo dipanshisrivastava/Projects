@@ -1,0 +1,45 @@
+.patient-form {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: bold;
+  }
+  
+  .form-input {
+    width: calc(100% - 20px);
+    /* padding: 10px; */
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6889ad;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #384a5e;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
