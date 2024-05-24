@@ -1,4 +1,4 @@
-<b>Patient Appointment System.</b>
+<b>Patient Appointment System</b>
 <ul>
 <li><b> Project Architecture : </b> 3 Tier Architechture</li>
   <ul>
