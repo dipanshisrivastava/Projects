@@ -29,7 +29,7 @@ Patient Appointment System.
   </ul>
 <li><b> Usage of Each Components : </b></li>
   <ul>
-    <li><b> User Interface : </b> Through this 'User Interface', user can interact with this website.</li>
+    <li><b> Presentation Layer : </b> Through this 'User Interface', user can interact with this website.</li>
     <li><b> Middle Layer : </b> Used to connect the database file(consist of all the required queries) to the User Interface.</li>
     <li><b>  Database Layer : </b> It is consist of all the required queries used in this project to implement it.</li>
   </ul>
