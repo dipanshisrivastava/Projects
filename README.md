@@ -2,21 +2,21 @@
 <ul>
 <li><b> Project Architecture : </b> 3 Tier Architechture</li>
   <ul>
-    <li> User Interface </li>
+    <li> Presentation Layer </li>
     <li> Middle Layer </li>
     <li> Database Layer </li>
   </ul>
 
 <li><b> Technology Used : </b> </li>
     <ul>
-      <li> <b> Front-end : </b> Reactjs, CSS, bootstrap </li>
+      <li> <b> Front-end : </b> React, React Router, Axios for HTTP requests, and CSS</li>
       <li> <b> Programming language : </b> Python </li>
       <li> <b> Frame work : </b> FastAPI </li>
       <li> <b> Back-end(database) : </b> MySQL </li>
    </ul>
 
 <li><b> Project Description : </b></br> 
-  It has a 'Search Patient' page to search all the Patients with their names.</li>
+  The Patient Appointment System is a web application designed to streamline patient management and appointment scheduling. It allows users to create, view, and search patient records, as well as book and manage appointments.</li>
 
 <li><b> Descriptions About Modules : </b></li>
   <ul>
@@ -31,10 +31,13 @@
   <ul>
     <li><b> Presentation Layer : </b> Through this 'User Interface', user can interact with this website.</li>
     <li><b> Middle Layer : </b> Used to connect the database file(consist of all the required queries) to the User Interface.</li>
-    <li><b>  Database Layer : </b> It is consist of all the required queries used in this project to implement it.</li>
+    <li><b> Database Layer : </b> It is consist of all the required queries used in this project to implement it.</li>
   </ul>
 
-<li>Install python, mysql, FastAPI, mysql connector to implement this project on your system.</li>
-
-<li>Run the create script to create database and all the tables required in this project.</li>
+<li><b>Instructions : </b></li>
+  <ul>
+    <li>Install python, mysql, FastAPI, mysql connector to implement this project on your system.</li>
+    
+    <li>Create automated script to create database and all the tables required in this project.</li>
+  </ul>
 </ul>
